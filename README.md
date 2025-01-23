@@ -1,6 +1,64 @@
-# joke-collection-app
+# Jokes Collection App
 
-This template should help get you started developing with Vue 3 in Vite.
+## Description
+
+Get some jokes!!! Choose between random jokes or programming jokes. Read the setup first, and when you're ready, reveal the punchline. Add your favorite jokes to your collection and rate them.
+
+## Features
+
+### Jokes Page
+
+- Fetch 10 random or programming jokes.
+- View the setup and reveal the punchline when ready.
+- Add jokes to your collection.
+
+### Collection Page
+
+- **Search Functionality**: Search jokes by setup or punchline.
+- **Filter by Rating**: Display jokes based on their rating.
+- **Sorting**: Sort jokes by rating or alphabetically (by setup).
+- **Rate Jokes**: Assign ratings to jokes in your collection.
+- **Remove Jokes**: Delete jokes from your collection.
+- **Statistics**: View total jokes in the collection and the average rating.
+
+Jokes are saved locally using the `jokes-collection` key in `localStorage`.
+
+## Tech Stack
+
+- **Vue 3** (Script Setup Syntax)
+- **TypeScript**
+- **Pinia**
+- **TailwindCSS**
+- **Axios**
+- **Vue Router**
+- **FontAwesome**
+- **Vite**
+- **Prettier**
+- **ESLint**
+
+## Getting Started
+
+1. Install dependencies:
+
+```sh
+npm install
+```
+
+2. Run the development server:
+
+```sh
+npm run dev
+```
+
+3. Open the app in your browser at `http://localhost:5173`.
+
+## Usage
+
+- Navigate to the Jokes page to fetch random or programming jokes.
+- Save your favorite jokes to the collection and rate them.
+- Go to the Collection page to manage your jokes, search, filter, and view statistics.
+
+## Development
 
 ## Recommended IDE Setup
 
@@ -37,3 +95,7 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## License
+
+This project is licensed under the MIT License.
