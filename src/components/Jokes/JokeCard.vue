@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col h-full p-4 border rounded shadow hover:shadow-lg bg-white relative">
+  <BaseCard>
     <p class="font-medium transition-all duration-300 ease-in-out">{{ joke.setup }}</p>
 
     <p
@@ -40,11 +40,12 @@
       </div>
     </div>
     <slot />
-  </div>
+  </BaseCard>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import BaseCard from '@/components/Shared/BaseCard.vue'
 import BaseButton from '@/components/Shared/BaseButton.vue'
 import type { Joke } from '@/types/joke.types'
 
