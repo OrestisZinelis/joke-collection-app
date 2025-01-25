@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import JokesView from '@/views/JokesView.vue'
-import CollectionView from '@/views/CollectionView.vue'
+import JokesView from '@/views/Jokes/JokesView.vue'
+import CollectionView from '@/views/Collection/CollectionView.vue'
 import ErrorView from '@/views/ErrorView.vue'
 
 export const RouteNames = {
