@@ -14,29 +14,29 @@
 
     <div class="flex justify-between items-center gap-1 mt-4">
       <div>
-        <SharedButton
+        <BaseButton
           v-if="!showPunchLine"
           @click="showPunchLine = true"
           :variant="showPunchLine ? 'secondary' : 'primary'"
         >
           Show
-        </SharedButton>
+        </BaseButton>
       </div>
       <div>
-        <SharedButton
+        <BaseButton
           v-if="showRemoveButton"
           :variant="'danger'"
           @click="emit('toggleFavorite', joke.id)"
         >
           <i class="fa fa-trash" />
-        </SharedButton>
-        <SharedButton
+        </BaseButton>
+        <BaseButton
           v-else
           :variant="isFavorite ? 'success' : 'secondary'"
           @click="emit('toggleFavorite', joke.id)"
         >
           <i class="fa fa-save" />
-        </SharedButton>
+        </BaseButton>
       </div>
     </div>
     <slot />
@@ -45,7 +45,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import SharedButton from '@/components/Shared/SharedButton.vue'
+import BaseButton from '@/components/Shared/BaseButton.vue'
 import type { Joke } from '@/types/joke.types'
 
 const props = defineProps<{

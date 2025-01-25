@@ -1,10 +1,10 @@
 <template>
-  <SharedToolbar>
+  <BaseToolbar>
     <template #left>
-      <SharedButton @click="emit('navigateToJokes')">
+      <BaseButton @click="emit('navigateToJokes')">
         <i class="fa fa-plus" />
         Add Jokes
-      </SharedButton>
+      </BaseButton>
     </template>
     <template #main>
       <div class="flex-1 min-w-[200px]">
@@ -19,7 +19,7 @@
 
       <div class="flex items-center gap-2">
         <span for="filterRating" class="text-sm font-medium text-gray-700">Filter</span>
-        <SharedSelect
+        <BaseSelect
           :value="filterRating"
           :options="ratingOptions"
           @update:value="handleRatingFilterUpdate"
@@ -28,16 +28,16 @@
 
       <div class="flex items-center gap-2">
         <span class="text-sm font-medium text-gray-700">Sort</span>
-        <SharedSelect :value="sortOption" :options="sortOptions" @update:value="handleSortUpdate" />
+        <BaseSelect :value="sortOption" :options="sortOptions" @update:value="handleSortUpdate" />
       </div>
     </template>
-  </SharedToolbar>
+  </BaseToolbar>
 </template>
 
 <script setup lang="ts">
-import SharedButton from '@/components/Shared/SharedButton.vue'
-import SharedSelect from '@/components/Shared/SharedSelect.vue'
-import SharedToolbar from '@/components/Shared/SharedToolbar.vue'
+import BaseButton from '@/components/Shared/BaseButton.vue'
+import BaseSelect from '@/components/Shared/BaseSelect.vue'
+import BaseToolbar from '@/components/Shared/BaseToolbar.vue'
 import type { CollectionSortOption } from '@/types/collection.types'
 
 defineProps<{

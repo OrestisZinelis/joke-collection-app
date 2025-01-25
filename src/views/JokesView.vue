@@ -21,7 +21,7 @@
       />
     </div>
     <div v-else class="fixed inset-0 flex justify-center items-center bg-opacity-50 z-50">
-      <LoadingSpinner />
+      <BaseSpinner />
     </div>
   </div>
 </template>
@@ -35,7 +35,7 @@ import { fetchRandomJokes, fetchJokesByType } from '@/api/jokes.api'
 import JokesToolbar from '@/components/Jokes/JokesToolbar.vue'
 import { RouteNames } from '@/router'
 import JokeCard from '@/components/Jokes/JokeCard.vue'
-import LoadingSpinner from '@/components/Shared/LoadingSpinner.vue'
+import BaseSpinner from '@/components/Shared/BaseSpinner.vue'
 import type { Joke, JokeType } from '@/types/joke.types'
 
 const router = useRouter()

@@ -1,27 +1,27 @@
 <template>
-  <SharedToolbar>
+  <BaseToolbar>
     <template #left>
-      <SharedButton @click="emit('navigateToCollection')">
+      <BaseButton @click="emit('navigateToCollection')">
         <i class="fa fa-list" />
         My Collection
-      </SharedButton>
+      </BaseButton>
     </template>
     <template #main>
       <span class="text-gray-700">Joke Type</span>
-      <SharedSelect
+      <BaseSelect
         :value="jokeType"
         :options="ratingOptions"
         @update:value="emit('update:jokeType', $event as JokeType)"
       />
-      <SharedButton @click="emit('getJokes')"> Get Jokes </SharedButton>
+      <BaseButton @click="emit('getJokes')"> Get Jokes </BaseButton>
     </template>
-  </SharedToolbar>
+  </BaseToolbar>
 </template>
 
 <script setup lang="ts">
-import SharedButton from '@/components/Shared/SharedButton.vue'
-import SharedSelect from '@/components/Shared/SharedSelect.vue'
-import SharedToolbar from '@/components/Shared/SharedToolbar.vue'
+import BaseButton from '@/components/Shared/BaseButton.vue'
+import BaseSelect from '@/components/Shared/BaseSelect.vue'
+import BaseToolbar from '@/components/Shared/BaseToolbar.vue'
 import type { JokeType } from '@/types/joke.types'
 
 defineProps<{
