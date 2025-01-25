@@ -47,10 +47,12 @@ const jokeType = ref<JokeType>('random')
 const jokes = ref<Joke[]>([])
 const punchlineVisibility = ref<Record<number, boolean>>({})
 const isFetchingJokes = ref(false)
+const hasFetchError = ref(false)
 
 const favoriteIds = computed(() => new Set(favorites.value.map((fav) => fav.id)))
 
 const getJokes = async () => {
+  hasFetchError.value = false
   isFetchingJokes.value = true
 
   try {
@@ -61,6 +63,8 @@ const getJokes = async () => {
 
     jokes.value = data
   } catch (error) {
+    hasFetchError.value = true
+    alert('Oops! Something went wrong while fetching the jokes. Please try again later.')
     console.error('Error fetching jokes:', error)
   } finally {
     isFetchingJokes.value = false
