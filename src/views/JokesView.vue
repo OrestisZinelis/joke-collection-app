@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useJokeStore } from '@/stores/joke.store'
 import { useRouter } from 'vue-router'
@@ -47,6 +47,8 @@ const jokeType = ref<JokeType>('random')
 const jokes = ref<Joke[]>([])
 const punchlineVisibility = ref<Record<number, boolean>>({})
 const isFetchingJokes = ref(false)
+
+const favoriteIds = computed(() => new Set(favorites.value.map((fav) => fav.id)))
 
 const getJokes = async () => {
   isFetchingJokes.value = true
@@ -69,17 +71,10 @@ const handleUpdateJokeType = (type: JokeType) => {
   jokeType.value = type
 }
 
-const toggleFavorite = (joke: Joke) => {
-  if (isFavorite(joke.id)) {
-    removeFavorite(joke.id)
-  } else {
-    addFavorite(joke)
-  }
-}
+const toggleFavorite = (joke: Joke) =>
+  isFavorite(joke.id) ? removeFavorite(joke.id) : addFavorite(joke)
 
-const isFavorite = (id: Joke['id']) => {
-  return favorites.value.some((fav) => fav.id === id)
-}
+const isFavorite = (id: Joke['id']) => favoriteIds.value.has(id)
 
 const navigateToCollection = () => {
   router.push({ name: RouteNames.Collection })
