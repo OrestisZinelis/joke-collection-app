@@ -4,6 +4,11 @@
 
 Get some jokes!!! Choose between random jokes or programming jokes. Read the setup first, and when you're ready, reveal the punchline. Add your favorite jokes to your collection and rate them.
 
+🎬 
+
+https://github.com/user-attachments/assets/af72e075-0255-4824-8672-9550aa55c615
+
+
 ## Features
 
 ### Jokes Page
